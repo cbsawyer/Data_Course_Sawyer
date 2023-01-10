@@ -17,3 +17,4 @@ so I can make ALL the changes I need, followed by one add command to create a ro
 so my merge problem was probably because i made edits on the repository, then didn't PULL back to my local files before making edits. so I had edits on the repository, and some on my local files, and those couldn't sync because neither was more correct, maybe? Idk I wish it was easier to compare and solve those discrepancies. Guess that's a problem with this approach, rather than a constant sync. Just have to remember these two systems aren't the same, and give and take needs to happen between them.
 So echo is write, add is enter, commit is save, push is to send it and sync it to the repository, pull is to pull changes from the repository to here. I'll try to figure out what each command means in and out of context as we move along
 Guess I'm adding another line
+I know how to add stuff, but idk how to take away yet
