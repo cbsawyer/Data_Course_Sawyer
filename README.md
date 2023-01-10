@@ -18,3 +18,4 @@ so my merge problem was probably because i made edits on the repository, then di
 So echo is write, add is enter, commit is save, push is to send it and sync it to the repository, pull is to pull changes from the repository to here. I'll try to figure out what each command means in and out of context as we move along
 Guess I'm adding another line
 I know how to add stuff, but idk how to take away yet
+so I wonder what the -m means in the commit line. Without it, it gets grumpy. Guessing it just means the naming of the default, most recent commit name target.
