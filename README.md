@@ -23,3 +23,4 @@ Chonkadonkdonkdonkbonkadinkdoo
 guess I'm gonna just keep chunking away. gonna do more commits at some point tomorrow
 k looks like it can handle quotes within quotes, that's good, at least.
 Here we fokin goooooooooooo boiyyyyyyyyy
+So what are the branches for? Like branches of the main line? idk
