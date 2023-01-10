@@ -19,3 +19,4 @@ So echo is write, add is enter, commit is save, push is to send it and sync it t
 Guess I'm adding another line
 I know how to add stuff, but idk how to take away yet
 so I wonder what the -m means in the commit line. Without it, it gets grumpy. Guessing it just means the naming of the default, most recent commit name target.
+Chonkadonkdonkdonkbonkadinkdoo
