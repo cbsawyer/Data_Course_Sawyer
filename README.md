@@ -21,3 +21,4 @@ I know how to add stuff, but idk how to take away yet
 so I wonder what the -m means in the commit line. Without it, it gets grumpy. Guessing it just means the naming of the default, most recent commit name target.
 Chonkadonkdonkdonkbonkadinkdoo
 guess I'm gonna just keep chunking away. gonna do more commits at some point tomorrow
+k looks like it can handle quotes within quotes, that's good, at least.
