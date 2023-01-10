@@ -7,4 +7,3 @@ Line
 Items
 my uploaded assignments
 Chocolate milk Test of CAPS and s p a c e s to this document
-Check of addition via github editor
