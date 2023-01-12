@@ -28,22 +28,3 @@ Last one for today, but this is starting to feel way more familiar at this point
 Today is a new day
 Try again Caleb
 First notepad text editor attempt. Testing addition of content, followed by deletion of other info in the next commit.
-Im going to delete this text
->README.md
-
->>README.md
-README.md
-
-.
-x
-echo Uhoh >>README.md
-/
-<
-q
-
-
-x
-
-git
- . >> README.md
-
