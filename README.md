@@ -14,3 +14,4 @@ so I wonder what the -m means in the commit line. Without it, it gets grumpy. Gu
 So what are the branches for? Like branches of the main line?
 Alright this is the edits done via nano
 Edit attempt from github to local files
+Speed test
