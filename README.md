@@ -16,3 +16,4 @@ Alright this is the edits done via nano
 Edit attempt from github to local files
 Speed test
 Speed test 2
+Speed test 3
