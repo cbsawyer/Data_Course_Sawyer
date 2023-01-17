@@ -13,4 +13,4 @@ I know how to add stuff, but idk how to take away yet A: nano [file name] wait w
 so I wonder what the -m means in the commit line. Without it, it gets grumpy. Guessing it just means the naming of the default, most recent commit name target.
 So what are the branches for? Like branches of the main line?
 Alright this is the edits done via nano
-Hahaha sorry that was just a joke please don't fire me (Aha unless O.o)
+Edit attempt from github to local files
