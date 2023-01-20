@@ -30,4 +30,4 @@ plot(x=wingspan$wingspan,
      y=wingspan$mass)
 cor(x=wingspan$wingspan,
     y=wingspan$mass)
-
+ 

@@ -22,3 +22,19 @@ TAB #helps autocomplete
 #plot, assign value to path, 
 
 # rmarkdown::render("foo.Rmd"). --> Ask about markdown rendering?
+
+# ? question mark before command brings up help menu
+# readLines THE L IS CAPITALIZED to read lines withing a file where n=the number of lines read
+#readLines does LINES not VALUES
+# TRUE is [1] FALSE is [0] just binary code
+
+#1/19/23
+#square-bracket notation lets you pick elements from an object
+# the object of a csv list is a character vector.
+# [1] means give me the FIRST ELEMENT of that CHARACTER VECTOR
+# readLines lets you read in 1 line at a time
+#it makes a character vector (not listed in the environment) where each line is an element
+#read.csv pays attention to COMMAS to split lines into columns
+# ^ up carrot means beginning, $ means ending.
+# example for ends with .csv = ".csv$"
+# example for ends in lowercase t = "t$"
