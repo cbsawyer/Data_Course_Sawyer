@@ -38,3 +38,6 @@ TAB #helps autocomplete
 # ^ up carrot means beginning, $ means ending.
 # example for ends with .csv = ".csv$"
 # example for ends in lowercase t = "t$"
+# getwd()
+getwd() # get directory of this current directory
+
