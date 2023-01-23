@@ -30,4 +30,86 @@ plot(x=wingspan$wingspan,
      y=wingspan$mass)
 cor(x=wingspan$wingspan,
     y=wingspan$mass)
- 
+
+for (i in b) {
+print(colMeans(b[i, c(2)])) 
+}
+
+i2 <- []
+
+readLines(b, 
+          n=-1
+          )
+
+list.files(wd)
+
+getwd()
+
+colMeans(b)
+
+bas <- list.files(pattern="basil",
+           recursive = TRUE,
+           full.names=TRUE,
+           ignore.case = TRUE)
+
+bas
+
+basl <- readLines(bas)
+
+grep(bas, pattern="A")
+
+ttt <- grep(pattern="ttt", basl,
+      ignore.case = TRUE)
+
+ttt
+
+readLines(bas)
+
+readLines(bas,
+          n=-1,
+          skip=1,
+          )
+
+readLines(bas,
+          n=-1)[testnum]
+
+readLines(bas,
+          n=-1)[4:(length(basl))]
+
+## NICE!!!! ##
+
+baslen <- length(basl)
+
+length(basl)
+
+testnum=4:163
+
+infnum=9999999
+
+length(bas)
+
+
+?readLines
+
+length(grep(pattern='^C|^G',
+     basl))
+
+length(grep(pattern='^C',
+     basl))
+
+
+length(grep(pattern='^C|^G|^A',
+            basl))
+
+
+length(grep(pattern = '^C|^G|^A|^T',
+            basl))
+
+length(basl)
+
+
+
+
+length(ttt)
+
+oppttt <- (length(basl)-length(ttt))
