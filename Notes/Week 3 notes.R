@@ -98,6 +98,9 @@ myfiles <- list.files("Data",
 
 for(i in myfiles) {
   print(readLines(i,n=3))
+  
+  
+  
 }
 
 
