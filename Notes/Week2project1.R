@@ -73,8 +73,11 @@ readLines(bas,
 readLines(bas,
           n=-1)[testnum]
 
-readLines(bas,
-          n=-1)[4:(length(basl))]
+baschr <- (readLines(bas,
+          n=-1)[4:(length(basl))])
+
+combn(baschr,
+      4L)
 
 ## NICE!!!! ##
 
@@ -107,9 +110,37 @@ length(grep(pattern = '^C|^G|^A|^T',
 
 length(basl)
 
-
-
-
 length(ttt)
 
 oppttt <- (length(basl)-length(ttt))
+
+baschr
+
+csvs
+
+pf <- "Data/practice_data_1.csv"
+
+p <- read.csv(pf)
+
+p
+
+pf
+
+for (k in p$k) {print(mean(p$k))
+
+}
+
+mean(p$x)
+
+mean(p$y)
+
+mean(p$z)
+
+colMeans(p$x|p$y|p$z)
+
+colMeans(as.numeric(p))
+         
+colMeans(p,
+    na.rm = FALSE,
+    dims = 1)
+
