@@ -55,4 +55,12 @@ iris %>%
   geom_smooth(method="lm") +
   theme_minimal()
 
-# "#fff6f5" hex codeeee colors
+# "#fff6f5" hex codeeee color
+
+iris[iris$Species != "virginica",] %>% 
+  ggplot(aes(x=Petal.Length,y=Petal.Width,color=Species)) +
+  geom_point(color="black") +
+  geom_smooth(method="lm") +
+  theme_minimal()
+
+# ! means NOT equal to. as seen above.
