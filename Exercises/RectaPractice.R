@@ -32,3 +32,15 @@ class(df[63,2])
 df[63,2]=as.numeric("231")
 
 df
+
+#ORRRRR INSTEAD
+
+str(df)
+
+df$width <- as.numeric(df$width)
+
+#NA is msising data. No interpretation of data.
+#Ooops... I did a fraud
+
+write.csv(df,"./Data/rectangles_clean.csv")
+

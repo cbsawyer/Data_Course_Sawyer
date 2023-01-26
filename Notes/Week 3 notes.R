@@ -113,3 +113,11 @@ for (i in myfiles) {print(readLines(i)[3])
 }
 
 mtcars
+
+#See Data/RectaPractice.R for:
+  #Write.csv , df$newcolumn , str(df) structure of , as.numeric , 
+
+#to load a package if its installed:
+library(tidyverse)
+
+#now at the top of every doc, library(tidyverse)
