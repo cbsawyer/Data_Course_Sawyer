@@ -121,3 +121,5 @@ mtcars
 library(tidyverse)
 
 #now at the top of every doc, library(tidyverse)
+
+#subsetting? practice this shit
