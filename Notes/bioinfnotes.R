@@ -12,5 +12,6 @@
 
 #it does use FLYE assembly
 
+#chmod is a thing
 #
 
