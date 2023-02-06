@@ -14,21 +14,21 @@ list.files(pattern = "big_cat",
 
 df <- read.csv("Assignments/Assignment_4/big_cat_data_example.csv")
 
-df %>% 
-  ggplot(aes(x=Sequence,
-             y=Species
-               ))
-  ggmsa(df)
+# df %>% 
+#   ggplot(aes(x=Sequence,
+#              y=Species
+#                ))
+#   ggmsa(df)
 
 
 ?ggplot2
 
 ?ggmsa
 
-ggmsa(df)
-?ggmsa
-
-ggmsa(df, start=1, end = )
+# ggmsa(df)
+# ?ggmsa
+# 
+# ggmsa(df, start=1, end = )
 
 #Yo I'm just gonna be honest, pretty sure this isn't
 #Gonna work. I don't know if these results can be
@@ -45,7 +45,7 @@ df %>%
   ggplot(aes(y=as.numeric(cumsum),
              x=as.character(species)
              ))+
-  geom_point()+
+  geom_point()
 
 class(df$mutations.from.original.sequence)  
 
