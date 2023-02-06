@@ -1,0 +1,8 @@
+final_project_idea
+
+1. Done
+
+2. I'm double dipping with Dr. Ogden's Molecular Evolution and Bioinformatics class. So we're taking DNA/protein sequence data for at least 2 genes, and a minimum of 30 taxa. Doing alignments and phylogenetic trees, comparing sequences and relatedness
+ 
+3. DNA seq, or protein seq. Going to be sourcing from NCBI databases. Gonna do lit searches for relatedness once my group has decided on an organism/gene set. Little nervous on SIZE that it's gonna take. So I'm hoping to find a well conserved gene, with just a small section of the genome that is regularly sequenced, rather than whole genome sequences. 
+

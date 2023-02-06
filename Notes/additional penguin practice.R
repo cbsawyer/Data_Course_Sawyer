@@ -8,6 +8,8 @@ p <- penguins %>%
              fill=species)) +
   geom_boxplot()
 
+ggmsa
+
 
 #ggsave("./my_penguin_plot.png",width=12,height = 2, dpi=150)
 
