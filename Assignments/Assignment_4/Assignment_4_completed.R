@@ -41,7 +41,7 @@ df$cumsum
 
 df$species
 
-df %>% 
+explot <- df %>% 
   ggplot(aes(y=as.numeric(cumsum),
              x=as.character(species)
              ))+
@@ -55,6 +55,14 @@ class(df$mutations.from.original.sequence)
 #be more complicated than that, I think. The "expected result" here is that as
 #evolutionary species descend, more mutations are made over time, deviating from 
 #the oldest common ancestor.
+explot
+
+#ggsave(explot,
+       # filename="Assignment_4_plot.png",
+       # path="./Assignments/Assignment_4",
+       # height=6,
+       # width=6)
+
 
 
 
