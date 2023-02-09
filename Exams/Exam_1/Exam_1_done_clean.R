@@ -1,6 +1,7 @@
 ### EXAM 1 JUST CODE ###
-# No context included here. ONLY the code needed for each exam part.
-#See "./Exam_1_done_workshop.R" for context-included code.
+# No context included here only the code needed for each exam part.
+# See: "Data_Course_Sawyer/Exams/Exam_1/Exam_1_done_workshop.R" for 
+# "context-included" code.
 library(tidyverse)
 
 # Part 1

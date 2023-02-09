@@ -1,18 +1,21 @@
 ### EXAM 1 ### 
-#WORKSHOP: includes all answers, but with context (lengthy thought processes 
-#and internal monologue) included. see "./Exam_1_cleaned_up.R" for raw code 
-#without all this mess. I use this file to reference and review, and to provide
-#background info in case I did something incorrectly.
+#WORKSHOP: has all answers, but with context (lengthy thought processes 
+#and internal monologue) included. See: 
+#"Data_Course_Sawyer/Exams/Exam_1/Exam_1_done_clean.R" 
+#for raw code without all this mess. I use this file to reference and review, 
+#and to provide background info in case I did something incorrectly.
 
 # Real shit baby here we goooooooooo
 # Begin with le baby shit, cause we gonna need it:
 library(tidyverse)
+getwd()
 
 ## Part I. ##
 #Read cleaned_covid_data into a data frame:
 
 read.csv("./cleaned_covid_data.csv")
-#Btw, there's the filepath. In a new R proj, (As requested, NOT an r file)
+#Btw, "Data_Course_Sawyer/Exams/Exam_1/cleaned_covid_data.csv" 
+#there's the filepath. In a new R proj, (As requested, NOT an r file like I)
 #so I hope this is figured out correctly
 
 df <- read.csv("./cleaned_covid_data.csv")
@@ -331,4 +334,8 @@ df %>%
 # summarise
 # 
 # dfd
-
+#
+# Well that was that. Again, if you want none of this mess, check
+#Exam_1_done_clean.R so its way easier to interpret.
+#
+### THE END ###
