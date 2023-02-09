@@ -1,5 +1,9 @@
 ### EXAM 1 ### 
-## Skills Test #1 ##
+#WORKSHOP: includes all answers, but with context (lengthy thought processes 
+#and internal monologue) included. see "./Exam_1_cleaned_up.R" for raw code 
+#without all this mess. I use this file to reference and review, and to provide
+#background info in case I did something incorrectly.
+
 # Real shit baby here we goooooooooo
 # Begin with le baby shit, cause we gonna need it:
 library(tidyverse)
@@ -8,8 +12,8 @@ library(tidyverse)
 #Read cleaned_covid_data into a data frame:
 
 read.csv("./cleaned_covid_data.csv")
-#Btw, there's the filepath. In a new R proj, so I hope this is figured out 
-#correctly
+#Btw, there's the filepath. In a new R proj, (As requested, NOT an r file)
+#so I hope this is figured out correctly
 
 df <- read.csv("./cleaned_covid_data.csv")
 
@@ -20,8 +24,8 @@ df
 ## Part II. ##
 #Subset data set to show only those states that begin with "A"
 # Save as A_states
-#Hold up, so only the states that start with A themselves? Or the rows with the states that start 
-#with A?
+#Hold up, so only the states that start with A themselves? Or the rows with the
+#states that start with A?
 
 ?grep
 #only diff between grep and grep1 is value being T/F. Couldn't really determine
@@ -32,7 +36,7 @@ grepl(df$Province_State,pattern='^A')
 #Report T/F
 #Now how to get the T/F to a data set by itself
 #subset(df(grepl(df$Province_State,pattern='^A')))
-# ^^^ That didn't work, but through google-fu, I think I'm gonna try to split it
+# ^^ That didn't work, but through google-fu, I think I'm gonna try to split it
 
 ?split
 ?split.data.frame
@@ -137,6 +141,8 @@ class(d)
 
 df
 
+#ad <- as.Date.character(A_states$Last_Update, format = "%Y-%m-%d")
+
 A_states %>% 
   ggplot(aes(x=d,
              y=A_states$Deaths))+
@@ -177,10 +183,10 @@ max(df$Case_Fatality_Ratio, na.rm=TRUE)
 list(df$Province_State)
 
 # K lets just write this out. What do I want to DO:
-#There's a lot of states. I don't want to do it each time for all 50+ individual
-#states. I'm hoping to figure out a for-loop here. 
+#There's a lot of states. I don't want to do it each time for all 50+ 
+#individual states. I'm hoping to figure out a for-loop here. 
 #What I want: for each unique value of df$Province_State, calc max CFR value.
-#So to make each unique state its own column, with each row a value from the df.
+#So to make each unique state its own column, with each row a value from the df
 #OR, I could think of it like, for each unique state, check the last value
 #recorded for that state. If the new, for-loop value is bigger, replace that
 # last value as the new max. But this would have to be done for EACH state.
@@ -231,28 +237,98 @@ for (i in split) {
 
  #   sort(decreasing=TRUE)
 
-
 ?print
 ?output
 ?rbind
 
 ?rbind
 
-
 #Just gonna double check a couple to make sure it worked right
 #yah... nope. I think the pi
- 
 
+#K so actually I'm gonna use the "normal civilized way" to do this:
 
-#HEYOOOOOOO LETS FUCKIN GO BOYSSSSSSSS
+state_max_fatality_rate <- 
+df %>% 
+  group_by(Province_State) %>% 
+  summarize(Maximum_Fatality_Ratio=max(Case_Fatality_Ratio,
+                                        na.rm=TRUE)) %>% 
+  arrange(desc(Maximum_Fatality_Ratio)) 
+
+state_max_fatality_rate
+
 
 ## PART V. ##
+# x=province state
+# y=max fat ratio
+# bar plot
+# x=in descending order (make factor)
+# x axis turned 90 degrees DO THIS
+# should be able to see diff states had diff ratios
+
+state_max_fatality_rate
+
+state_max_fatality_rate %>% 
+ggplot(aes(x=reorder(Province_State, -Maximum_Fatality_Ratio),
+           y=Maximum_Fatality_Ratio))+
+  geom_col()+
+  theme(axis.text.x = element_text(angle = 90))
 
 
+# order(desc(f))
+# ?arrange
+# as.integer(factor(levels=c(state_max_fatality_rate$max_case_fatality_ratio)))
+# factor(state_max_fatality_rate$max_case_fatality_ratio)
+# class(f)
+# ?geom_bar
+# class(Uhh)
+# p <- ggplot(df, aes(x = reorder(f.name, -age), y = age))
+# Found this that worked
 
 
+## PART VI. (BONUS) ##
+
+# class(df$Deaths)
+# 
+# y=cumsum(df$Deaths)
+# x=Last_Update
+# 
+
+df
+
+# ohno <- 
 
 
+df %>% 
+  group_by(Last_Update) %>% 
+  summarize(csd=cumsum(Deaths)) %>% 
+  ggplot(aes(x=as.Date(Last_Update),
+             y=csd))+
+  geom_col()
 
+# 
+#   scale_x_date(date_breaks = "1 month", date_labels = "%Y")
+# 
+# class(L)
 
+#  theme(axis.text.x = element_text(angle = 90))
+
+# ?cumsum
+# df %>% 
+#   group_by(Province_State) %>% 
+#   summarize(max_case_fatality_ratio=max(Case_Fatality_Ratio,
+#                                         na.rm=TRUE)) %>% 
+#   arrange(desc(max_case_fatality_ratio)) 
+# # 
+# dfd <- as.Date(df$Last_Update, format = "%Y-%m-%d")
+# 
+# class(dfd)
+# 
+# head(df)
+# 
+# ?as.Date.character
+# ?summarise
+# summarise
+# 
+# dfd
 
