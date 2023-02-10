@@ -277,6 +277,8 @@ ggplot(aes(x=reorder(Province_State, -Maximum_Fatality_Ratio),
   geom_col()+
   theme(axis.text.x = element_text(angle = 90))
 
+##OR just state_max_fatality_rate %>% 
+#             factor(state_max_fatality_rate$Province_State,levels = state_max_fatality_rate)
 
 # order(desc(f))
 # ?arrange
