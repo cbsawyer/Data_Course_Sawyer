@@ -82,6 +82,8 @@ dfp2 <-
 dfp %>% 
   mutate(Sample_Type = ifelse(wtr,"water","soil"))
 
+dfp2
+
 ### Part 3 ###
 #Generates a plot that matches this one (note just plotting dilution == 0.1)
 
@@ -114,20 +116,9 @@ justdil0.1
 #        height=1800,
 #        units = "px")
 
-
 #Now THAT is almost if not an EXACT match~
 
-
-  
-  
-
-
-
-
 ### PART 4 ###
-
-
-
 dfpia <- filter(dfp,dfp$Substrate=="Itaconic Acid")
 
 dff <- 
@@ -154,22 +145,16 @@ animate(dffplot,
         fps=5,
         duration=10,
         rewind=FALSE)
-# 
 # anim_save("mean_abs_anim_plot.gif",
 #           animation = last_animation(),
 #           path = "./")
  
 
-
-
-
-
+## GRAVEYARD ##
 #   transition_states(time_elapsed_hrs,
 #                   transition_length = 10,
 #                   state_length = 0.2,
 #                   wrap = TRUE)
-
-
 # animate(dff %>% 
 #           ggplot(aes(x=time_elapsed_hrs,
 #                      y=Mean_absorbance,
@@ -180,19 +165,8 @@ animate(dffplot,
 #           labs(x="Time",
 #                color="Sample ID"),
 #         fps=5,duration=10)
-
-# ?transition_states
-# ?animate()
-# 
 # dffplot+
 #   transition_states(Sample.ID,
 #                     transition_length = 10,
 #                     state_length = 0.2,
 #                     wrap = TRUE)
-
-# 
-# ?transition_states
-#   
-# 
-# ?animate
-#   
