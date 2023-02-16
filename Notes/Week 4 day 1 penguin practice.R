@@ -72,7 +72,7 @@ penguins %>%
   ggplot(aes(x=bill_depth_mm,
              y=body_mass_g,
              color=species))+
-  geom_boxplot() +
+  geom_boxplot() + 
 #  facet_wrap(~island)
 
 penguins %>% 
