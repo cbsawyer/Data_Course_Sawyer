@@ -63,6 +63,8 @@ df %>%
   pivot_wider(names_from = variable,
               values_from = "ir")
 
+#See posted file
+
 
 
 
