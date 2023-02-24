@@ -8,14 +8,23 @@
 
 ### PART 1 ###
 
+#Note, I did this assignment before we talked in class about cleaning. 
+#So some things might be diff. 
+#If this is opened via the "Assignment_6" r project itself, some file paths may
+#differ from this version, including 
+#"./Assignments/Assignment_6/BioLog_Plate_Data_dirty.csv", having added "dirty"
+#to the new location's file name.
+
 library(tidyverse)
 library(gganimate)
 library(gifski)
+library(janitor)
 
 df <- 
-read.csv("./BioLog_Plate_Data_dirty.csv")
+read.csv("./Data/BioLog_Plate_Data.csv") %>% 
+  clean_names()
 
-head(df)
+names(df)
 
 #Variables: 
 # Sample, 
@@ -45,14 +54,14 @@ head(df)
 #see pivot
 
 dfp <- 
-pivot_longer(df, 
-             cols = 6:8, 
+df %>% 
+pivot_longer(cols = c(hr_24,hr_48,hr_144), 
              names_to = "time_elapsed_hrs", 
              values_to = "abs")
 
-dfp$time_elapsed_hrs <- gsub("Hr_","",as.character(dfp$time_elapsed_hrs))
-
-dfp$time_elapsed_hrs <- as.numeric(dfp$time_elapsed_hrs)
+dfp$time_elapsed_hrs <- 
+  gsub("hr_","",dfp$time_elapsed_hrs) %>% 
+  as.numeric(dfp$time_elapsed_hrs)
 
 dfp
 
@@ -76,26 +85,26 @@ dfp
 #          ifelse("Clear_Creek"|"Waste_Water",'soil','water'))
 
 wtr <- grepl(pattern='Clear_Creek|Waste_Water',
-             dfp$Sample.ID)
+             dfp$sample_id)
 
-dfp2 <- 
+dfp <- 
 dfp %>% 
-  mutate(Sample_Type = ifelse(wtr,"water","soil"))
+  mutate(sample_type = ifelse(wtr,"water","soil"))
 
-dfp2
+dfp
 
 ### Part 3 ###
 #Generates a plot that matches this one (note just plotting dilution == 0.1)
 
-dfp0.1 <- dfp2[dfp2$Dilution==0.1,]
+dfp0.1 <- dfp[dfp$dilution==0.1,]
 
-justdil0.1 <- 
+plot0.1 <- 
 dfp0.1 %>% 
   ggplot(aes(x=time_elapsed_hrs,
          y=abs,
-         color=as.factor(dfp0.1$Sample_Type)))+
+         color=as.factor(dfp0.1$sample_type)))+
   geom_smooth(se=FALSE)+
-  facet_wrap(~dfp0.1$Substrate)+
+  facet_wrap(~dfp0.1$substrate)+
   theme_minimal()+
   scale_color_manual(values=c("#f7766e","#00bfc4"))+
   theme(text = element_text(size=10), 
@@ -107,9 +116,9 @@ dfp0.1 %>%
        color="Type",
        title = "Just dilution 0.1")
 
-justdil0.1
+plot0.1
 
-# ggsave("justdil0_1.png",
+# ggsave("plot0_1.png",
 #        plot=last_plot(),
 #        path = "./",
 #        width = 3600,
@@ -119,13 +128,13 @@ justdil0.1
 #Now THAT is almost if not an EXACT match~
 
 ### PART 4 ###
-dfpia <- filter(dfp,dfp$Substrate=="Itaconic Acid")
+dfpia <- filter(dfp,dfp$substrate=="Itaconic Acid")
 
 dff <- 
 dfpia %>% 
-  group_by(Sample.ID,
-           Dilution,
-           Substrate,
+  group_by(sample_id,
+           dilution,
+           substrate,
            time_elapsed_hrs) %>% 
   summarize(Mean_absorbance=mean(abs))
 
@@ -133,9 +142,9 @@ dffplot <-
 dff %>% 
 ggplot(aes(x=time_elapsed_hrs,
            y=Mean_absorbance,
-           color=Sample.ID))+
+           color=sample_id))+
   geom_line()+
-  facet_wrap(~Dilution)+
+  facet_wrap(~dilution)+
   theme_minimal()+
   labs(x="Time",
        color="Sample ID")+
@@ -145,10 +154,11 @@ animate(dffplot,
         fps=5,
         duration=10,
         rewind=FALSE)
-# anim_save("mean_abs_anim_plot.gif",
+# 
+# anim_save("mean_abs_anim_plot_dcs.gif",
 #           animation = last_animation(),
 #           path = "./")
- 
+#  
 
 ## GRAVEYARD ##
 #   transition_states(time_elapsed_hrs,

@@ -8,7 +8,6 @@ df <- read.csv("./Data/Bird_Measurements.csv") %>%
   select(-ends_with("_n")) 
 
 
-
 df %>% 
   select(-ends_with("_n")) %>% 
   names
