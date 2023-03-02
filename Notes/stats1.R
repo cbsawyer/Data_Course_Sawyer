@@ -78,3 +78,8 @@ library(easystats)
 # while loop!!!!!!!
 # while read
 
+# 
+# 20 mins late to class
+#home price ~ house size + pool
+#additive vs interactive models with multiple variables
+
