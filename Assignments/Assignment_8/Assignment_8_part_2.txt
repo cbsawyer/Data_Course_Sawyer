@@ -1,0 +1,15 @@
+
+nlr <- 
+read.csv("./non_linear_relationship.csv") %>% 
+  clean_names()
+
+ggplot(nlr, aes(x= predictor ,
+               y=response)) + 
+  geom_point() + 
+  geom_smooth() +
+  theme_minimal()
+
+modx = glm(data=nlr,
+           formula=response ~ predictor)
+
+summary(modx)
