@@ -54,7 +54,7 @@ formula(mod)
 #in displacement
 
 df <- data.frame(displ = 1:10,
-                 cyl=5,
+                 cyl=5,z
                  drv="f")
 
 predict(mod,newdata = df)

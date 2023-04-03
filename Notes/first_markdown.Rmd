@@ -31,4 +31,8 @@ here is pic of hamb:
 ```{r,out.height=600,out.width=800}
 knitr::include_graphics("../Media/hamburger.png")
 ```
+exam 3 and final markdown will be rmd
+website hosting final, rmd
+
+week 11  notes
 

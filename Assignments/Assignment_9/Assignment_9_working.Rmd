@@ -1,0 +1,67 @@
+---
+output: html_document
+
+---
+# Assignment 9 :
+Practice data analysis using r markdown using grad school admissions (GradSchool_Admissions.csv)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Package loading:
+```{r, echo=TRUE,message=FALSE, warning=FALSE}
+library(tidyverse)
+library(modelr)
+library(easystats)
+library(plotly)
+library(kableExtra)
+library(janitor)
+library(patchwork)
+library(GGally)
+```
+Read in the data:
+```{r, echo=TRUE}
+df <- read.csv("../../Data/GradSchool_Admissions.csv") %>% 
+  clean_names()
+glimpse(df)
+
+```
+Clean it up a bit:
+Make admissions logical
+Make rank factor, not numeric
+
+```{r}
+df <- 
+  df %>% 
+  mutate(admitted = case_when(admit=="1" ~ TRUE,
+                          admit=="0" ~ FALSE))
+
+df$rank=as.factor(df$rank)
+
+```
+
+I'm not going to exclude any particular variables, because it makes sense that GPA, GRE score and rank of institution all have the potential to affect admission.
+```{r}
+view <- 
+df %>% 
+  select(admitted,gre,gpa,rank) %>% 
+    ggpairs()
+
+ggpairs(df)
+
+mod1 = glm(data=df,
+           formula=admit~gre)
+
+mod2 = glm(data=df,
+           formula=admit~gre + gpa )
+
+mod3 = glm(data=df,
+           formula=admit~(gre + gpa) * rank)
+
+mod4 = glm(data=df,
+           formula=admit~(gre*gpa) + rank)
+
+mod4 = glm(data=df,
+           formula=admit~(gre*gpa) + rank)
+```
+

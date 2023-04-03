@@ -13,5 +13,8 @@
 # add echo=false to show just the output, not the code
 
 
+# use markdown live preview website for more info
 
+# TOC true (table of contents)
 
+#get a feel for how text renders in markdown
