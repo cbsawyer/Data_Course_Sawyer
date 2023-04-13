@@ -1,21 +1,32 @@
-taxa,16s_accession_number,cox1_accession_number
-Mucilaginibacter,NR_181232.1,
-Rhizobium,,
-Sphingomonas,,
-Acinetobacter,,
-Elizabethkingia,,
-Bradyrhizobium,,
-Aureitalea,,
-Rhodospirillum,,
-Arcobacter,,
-Marixanthomonas,,
-Pelagicoccus,,
-Azonexus,,
-Thiogranum,,
-Bizionia,,
-Paracoccus,,
-Vibrionimonas,,
-Wandonia,,
-Bauldia,,
-Litorimonas,,
-Anderseniella,,
+taxa,16s_accession_number,cox1_accession_number,16s_seq,cox1_seq,taxa_messy
+Mucilaginibacter,NR_181232.1,,,,> Archaea (outgroup)
+Rhizobium,,,,,> Acinetobacter (sig)
+Sphingomonas,,,,,> Alteromonas (non-sig)
+Acinetobacter,,,,,> Anderseniella (sig)
+Elizabethkingia,,,,,> Arcobacter (sig)
+Bradyrhizobium,,,,,> Aureitalea (sig)
+Aureitalea,,,,,> Azonexus (sig)
+Rhodospirillum,,,,,> Bauldia (sig)
+Arcobacter,,,,,> Bizionia (sig)
+Marixanthomonas,,,,,> Blastopirellula (non-sig)
+Pelagicoccus,,,,,> Bradyrhizobium (sig)
+Azonexus,,,,,> Elizabethkingia (sig)
+Thiogranum,,,,,> Erythrobacter (non-sig)
+Bizionia,,,,,> Flexithrix (non-sig)
+Paracoccus,,,,,> Gilvibacter (non-sig)
+Vibrionimonas,,,,,> Litorimonas (sig)
+Wandonia,,,,,> Marixanthomonas (sig)
+Bauldia,,,,,> Modicisalibacter (non-sig)
+Litorimonas,,,,,> Mucilaginibacter (sig)
+Anderseniella,,,,,> Paracoccus (sig)
+,,,,,> Pelagicoccus (sig)
+,,,,,> Psychrosphaera (non-sig)
+,,,,,> Reinekea (non-sig)
+,,,,,> Rhizobium (sig)
+,,,,,> Rhodospirillum (sig)
+,,,,,> Ruegeria (non-sig)
+,,,,,> Sphingomonas (sig)
+,,,,,> Thiogranum (sig)
+,,,,,> Vibrio (non-sig)
+,,,,,> Vibrionimonas (sig)
+,,,,,> Wandonia (sig)

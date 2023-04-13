@@ -42,12 +42,10 @@ df$rank=as.factor(df$rank)
 
 I'm not going to exclude any particular variables, because it makes sense that GPA, GRE score and rank of institution all have the potential to affect admission.
 ```{r}
-view <- 
+
 df %>% 
   select(admitted,gre,gpa,rank) %>% 
     ggpairs()
-
-ggpairs(df)
 
 mod1 = glm(data=df,
            formula=admit~gre)
