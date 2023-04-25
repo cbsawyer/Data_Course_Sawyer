@@ -26,7 +26,7 @@ library(bio3d)
 
 #Given the use of 20 significant taxa provided, an additional 10 samples will
 # be randomly selected from the total set of 254 to achieve a total sample 
-#number of 30.
+# number of 30.
 # Here are the taxa that exhibited statistically significant differential 
 # abundance by E/W of WL:
 
@@ -42,6 +42,7 @@ library(bio3d)
 #seed <- round(runif(1, 1, 2147483647))
 set.seed(141372682)
 
+round(runif(1, 1, 2147483647))
 
 #random selection of other 10 taxa
 newtaxa <- round(runif(10, 1, 254))
@@ -240,3 +241,96 @@ is.rooted(fitLG$tree)
 getRoot(fitLG$tree)
 ?root
 class(fitLG$tree)
+
+#alignseqs in the decipher package for alignments, best alignment.
+
+#######
+#Code Folding: R markdown
+# Title: "x"
+# output:
+#     html_document:
+#       code_folding: hide
+#######
+
+#cran r-project.org Task views > phylogenetic
+
+#<br> line break
+#style type="test/css"
+#</div>
+#ctrl + shift + c
+#or for whole page:
+# copy link. in command line curl https://
+
+# wget https://filepath gets a file
+# wget can do recursive
+# wget -A html -r -l 2 http://gzahn.github.io
+
+#Janitor to clean vector character strings
+#janitor::make_clean_names(x)
+
+
+kableExtra::add_footnote()
+
+#zahn go to
+    Using kableextra:
+
+# https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#CellText_Specification
+
+iris %>% 
+  mutate(html=kableExtra::cell_spec(Sepal.Length,
+                                    bold=TRUE)) %>% 
+
+iris %>% 
+  mutate(html=kableExtra::cell_spec(Sepal.Length,
+                                    bold=TRUE)) %>% 
+  kableExtra::cell_spec(Sepal.Length>5~
+                          )
+  kableExtra::kable(escape = FALSE) %>% 
+    
+df %>% 
+  kableExtra::kable()#make kable object 
+  %>%
+  mutate(html=kableExtra::cell_spec(Sepal.Length,
+                                    bold=TRUE)) %>% 
+  kableExtra::kable_classic() %>% 
+  kableExtra::cell_spec() #cell specific edits, bolds, etc
+  kableExtra::scroll_box()
+  kableExtra::
+  
+df %>% str_trunc(5,ellipsis="")
+  
+#"Good enough is better than perfect"
+  
+library(tidyverse)
+  
+#Fake data: Wakefield package
+  
+wakefield::grade_letter(10)
+
+?dbinom
+
+# binom: coin flips, t/f, dice rolls
+
+#differentials: D()
+#integrate() or what the Dnorm function is doing in the background
+
+#R is for stats
+#https://dtkaplan.github.io/RforCalculus/preface.html
+
+#Normal stats AOV anova, stats, etc
+
+#Actually adds important stuff for the table, shows factor levels, etc
+#TukeyHSD(mod.hsv)
+
+#sig test cor.test(count,speed)
+
+#t.test(1:10,3:30)
+#chisq.test (give it a contingency table)
+
+
+
+
+
+
+
+

@@ -140,7 +140,12 @@ bs <-
 root <- 
   root(fitLG$tree,outgroup="Archaea",resolve.root=TRUE)
 
+col <- 
+fitLG$tree[2]
+
 ###Troubles rooting
+is.rooted(root)
+getRoot(root)
 
 #plot the UF
 ufbsplot<- 
@@ -160,12 +165,74 @@ stdbsplot <-
 # write.tree(stdbs_tree, "cox1_stdbs_nwk.tree")
 ######
 
+# Read tree goes from .tree file to phylo object
+
+
+
 uf <-   
   read.tree("cox1_ufsb_nwk.tree")
 
 std <- 
   read.tree("cox1_stdbs_nwk.tree")
 
+class(uf)
+
+root <- 
+  root(fitLG$tree,outgroup="Archaea",resolve.root=TRUE)
+
+?root
+###Troubles rooting
+
+
+ruf <- 
+  root(uf,outgroup="Archaea",resolve.root=TRUE)
+
+is.rooted(ruf)
+
+getRoot(root)
+
+?getRoot
 ### Step 9. ###
 ## Convert data into R Markdown!
 
+ruf[5]
+
+
+plot.phylo(ruf,
+           type = "phylogram",
+           use.edge.length = FALSE,
+           tip.color = sigtest)
+
+
+
+?plot.phylo
+
+
+df$sig_type %>% 
+  unique
+
+sigtest <- c("red","black", "blue")[df$sig_type]
+
+treetips <- 
+  data_frame(ruf[[5]])
+
+treetips$type=c("non-sig")
+
+taxatype <- 
+  data_frame(cols=df$taxa_genus,df$sig_type)
+
+taxatype$`df$sig_type` %>% 
+  order()
+
+##thats the order the facrtors need to be in!
+
+order returns current order, make 2 vectors match    
+
+?data_frame
+
+sigtest
+
+# [1] "blue" "red" "blue" 
+# plot(mytr, tip.color = mycol)
+
+class()
