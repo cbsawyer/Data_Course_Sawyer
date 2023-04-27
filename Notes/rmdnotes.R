@@ -7,7 +7,7 @@
 
 # **BOLD**
 
-# the following line shows the code plut output -->
+# the following line shows the code plot output -->
 # '''{r cars}
 #summary(cars)
 # add echo=false to show just the output, not the code
