@@ -111,5 +111,53 @@ mod1 <- glm(data=df1,
 mod2 <- glm(data=df1,
             formula=value ~ year + continent)
 
-# mod3 <- glm(data=df1,
-#             formula=value ~ year * continent * country)
+#Interaction = "*"
+
+mod3 <- glm(data=df1,
+            formula=value ~ year * continent)
+
+### Part VIII ### Compare model performance
+
+pred <- 
+  gather_predictions(df1,mod1,mod2,mod3)
+
+pred %>% 
+  ggplot(aes(x=year, y=pred, color = continent)) +
+  geom_smooth(method=glm) +
+  facet_wrap(~model)
+
+compare_performance(mod1,mod2,mod3) %>% plot
+
+# check_model(mod1)
+# check_model(mod2)
+# check_model(mod3)
+
+summary(mod1)
+summary(mod2)
+summary(mod3)
+
+# Compare performance shows mod 3 as a pretty clear winner among all 
+# categories, and it also shows the most predictive structure when
+# plotting its predictions.
+
+### Bonus ###
+#Well, based off of mod3:
+
+df2 <- data.frame(country ="Ecuador",year=2020,continent="Americas")
+
+predict(mod3,df2)
+
+# so -10.58018 as opposed to the reality: 13 
+# Off by 23 isn't like... AWFUL.... right.......?
+
+mod4 <- glm(data=df1,
+            formula=value ~ year + (country * continent))
+
+predict(mod4,df2)
+
+#K well that is actually a little closer than -10, so I'm gonna call that a win.
+# After all, "Good enough is better than perfect" -Zahn
+
+
+
+
